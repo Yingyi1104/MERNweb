@@ -12,10 +12,12 @@ const Profile = require('../../models/Profile');
 const validatePostInput = require('../../validation/post');
 
 // @route   GET api/posts/test
+// @desc    Tests post route
 // @access  Public
 router.get('/test', (req, res) => res.json({ msg: 'Posts Works' }));
 
 // @route   GET api/posts
+// @desc    Get posts
 // @access  Public
 router.get('/', (req, res) => {
   Post.find()
@@ -25,6 +27,7 @@ router.get('/', (req, res) => {
 });
 
 // @route   GET api/posts/:id
+// @desc    Get post by id
 // @access  Public
 router.get('/:id', (req, res) => {
   Post.findById(req.params.id)
@@ -35,6 +38,7 @@ router.get('/:id', (req, res) => {
 });
 
 // @route   POST api/posts
+// @desc    Create post
 // @access  Private
 router.post(
   '/',
@@ -60,6 +64,7 @@ router.post(
 );
 
 // @route   DELETE api/posts/:id
+// @desc    Delete post
 // @access  Private
 router.delete(
   '/:id',
@@ -84,6 +89,7 @@ router.delete(
 );
 
 // @route   POST api/posts/like/:id
+// @desc    Like post
 // @access  Private
 router.post(
   '/like/:id',
@@ -112,6 +118,7 @@ router.post(
 );
 
 // @route   POST api/posts/unlike/:id
+// @desc    Unlike post
 // @access  Private
 router.post(
   '/unlike/:id',
@@ -146,6 +153,7 @@ router.post(
 );
 
 // @route   POST api/posts/comment/:id
+// @desc    Add comment to post
 // @access  Private
 router.post(
   '/comment/:id',
@@ -179,6 +187,7 @@ router.post(
 );
 
 // @route   DELETE api/posts/comment/:id/:comment_id
+// @desc    Remove comment from post
 // @access  Private
 router.delete(
   '/comment/:id/:comment_id',
